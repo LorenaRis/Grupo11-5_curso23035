@@ -5,9 +5,10 @@
   <title>Datos recibidos</title>
   <link rel="stylesheet" href="../Carpeta CSS/home.css">
   <link rel="icon" href="../img/icons8-correo-16.ico">
+  <!-- <link rel="javascript" href="../Carpeta JS/show_data.js"> -->
   <script src="https://kit.fontawesome.com/493b21e64b.js" crossorigin="anonymous"></script>
   <nav>
-    <a href="home.html">HOME</a>
+    <a href="../index.html">HOME</a>
   </nav>
 </head>
 <body>
@@ -20,27 +21,7 @@
     <th align="center">Tipo de dato </th>
     <th align="center">Valor recibido </th>
   </tr>
-
-<script language="javascript">
-var args = location.search.substr(1).split('&');
-for (var i = 0; i < args.length; ++i) {
-  var parts = args[i].split('=');
-  if (parts != null) {
-    var field = parts[0];
-    var value = parts[1];
-    if (value == null) {
-      value = "null"
-    }
-    else {
-      value = '"' + unescape(value.replace(/\+/g, ' ')) + '"';
-    }
-
-    document.writeln('<tr><td align="center">' + field + '</td>');
-    document.writeln('<td align="center">' + value + '</td></tr>');
-  }
-}
-</script>
-
+<script src="../Carpeta JS/show_data.js"></script>
 
 <noscript>
 <tr><td>
