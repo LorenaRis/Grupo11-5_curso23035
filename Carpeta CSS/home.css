@@ -196,6 +196,24 @@ h1 {
   height: 95%;
 }
 
+.dorso {
+  /* background-color: blue; */
+  visibility: hidden;
+}
+
+.imagen:active {
+  visibility: hidden;
+}
+
+.imagen:active+.dorso {
+  visibility: visible;
+}
+
+/* .link_deshabilitado {
+  pointer-events: none;
+}  */
+
+
 .iconos {
   width: 5em;
   height: 5em;
@@ -241,13 +259,14 @@ a h3 {
   text-align: center;
 }
 
-.foo{
-  background-color:  hsl(2, 70%, 69%);
-  color:#54343f;
+.foo {
+  background-color: hsl(2, 70%, 69%);
+  color: #54343f;
   padding: 5px;
   border-color: #54343f;
   border-radius: 5px;
 }
+
 /* Estilos del botón de whatsapp */
 .btn-wsp {
   position: fixed;
@@ -285,55 +304,60 @@ footer {
   padding: 1em;
   text-align: center;
   background: linear-gradient(to top, #e77a7788, #e77a7788);
-  }
+}
 
-  #nosotros{
-    margin: 1.5em;
-  }
+#nosotros {
+  margin: 1.5em;
+}
 
-  /* Definición de estilos del formulario */
-    /* Definición de la rejilla */
-    form {
-      margin-left: 2em;
-    }
-    fieldset{
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      grid-gap: 1rem;
-      max-width: 800px;
-    }
-    textarea{
-      width: 100%; 
-      font-size: 1.5em;
-    }
-    /* estilo para selectores */
-    .selectores {
-      display: grid; 
-      grid-template-columns: 2fr  2fr; 
-      grid-gap: 1em
-    }
-  
-    /* Estilos para las etiquetas */
-    label {
-      font-weight: bold;
-    }
-  
-    /* Estilos para los campos de entrada */
-    input, select {
-      border: 1px solid gray;
-      border-radius: 4px;
-      padding: 0.5rem;
-      font-size: 1rem;
-      box-sizing: border-box;
-      width: 100%;
-    }
-    #boton_reset{
-      background-color: red; 
-      color: white;
-      width: 16em;
-    }
+/* Definición de estilos del formulario */
+/* Definición de la rejilla */
+form {
+  margin-left: 2em;
+}
 
-    #boton_enviar{
-      background-color: chartreuse;
-      width: 16em;
-    }
+fieldset {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 1rem;
+  max-width: 800px;
+}
+
+textarea {
+  width: 100%;
+  font-size: 1.5em;
+}
+
+/* estilo para selectores */
+.selectores {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-gap: 1em
+}
+
+/* Estilos para las etiquetas */
+label {
+  font-weight: bold;
+}
+
+/* Estilos para los campos de entrada */
+input,
+select {
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+#boton_reset {
+  background-color: red;
+  color: white;
+  width: 16em;
+}
+
+#boton_enviar {
+  background-color: chartreuse;
+  width: 16em;
+}
