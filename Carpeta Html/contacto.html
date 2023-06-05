@@ -9,6 +9,7 @@
   <link rel="icon" href="../img/icons8-correo-16.ico">
   <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/493b21e64b.js" crossorigin="anonymous"></script>
+  <script src="../Carpeta JS/valida.js"></script>
 </head>
 
 <body>
@@ -37,54 +38,56 @@
 
     <h3>Completa el siguiente formulario:</h3><br>
 
-    <form action="show_data.html" target="_blank" autocomplete="off">
+    <form action="show_data.html" target="_blank" autocomplete="off" id="formulario">
       <fieldset>
 
         <label for="nombre">Nombre/s :</label>
-        <input type="text" autofocus id="nombre" name="Nombre" required>
+        <input type="text" autofocus id="nombre" name="Nombre" pattern="[A-Za-z]+" required>
 
         <label for="apellido">Apellido/s :</label>
-        <input type="text" id="apellido" name="Apellido" required>
+        <input type="text" id="apellido" name="Apellido" pattern="[A-Za-z]+" required>
 
-        <label for="telefono">Nùmero de telefono :</label>
-        <input type="tel" id="telefono" name="Numero_de_telefono" required>
+        <label for="telefono">Número de telefono :</label>
+        <input type="tel" id="telefono" name="Numero_de_telefono" pattern="[0-9]+" required>
 
         <label>Tu linea es :</label>
-        <select size="1" name="Tipo_de_linea">
+        <select size="1" name="Tipo_de_linea" id="tlinea" >
           <option>Movil</option>
           <option>Fija</option>
         </select>
 
         <label>Te podemos contactar por la :</label>
-        <select size="1" name="Contactar_por_la" required>
+        <select size="1" name="Contactar_por_la" id="horac" required>
+          <option>Seleccione un rango horario</option>
           <option>Manana</option>
           <option>Tarde</option>
           <option>Noche</option>
         </select>
 
         <label for="email">Email :</label>
-        <input type="email" id="email" name="E-mail" required>
+        <input type="email" id="email" name="E-mail" onchange="validarCorreo(formulario.email.value)" required>
 
         <label for="nacimiento">Fecha de nacimiento :</label>
-        <input type="date" id="nacimiento" name="Fecha_de_nacimiento  " required>
+        <input type="date" id="nacimiento" name="Fecha_de_nacimiento_" min="1950-01-01" max="2023-05-31" required>
 
         <label>Género :</label>
         <fieldset class="selectores" >
-          <input type="radio" name="Genero" value="Masculino" checked>Masculino
-          <input type="radio" name="Genero" value="Femenino">Femenino
-          <input type="radio" name="Genero" value="Otro">Otro
+          <input type="radio" id="genero" name="Genero" value="Masculino" checked>Masculino
+          <input type="radio" id="genero" name="Genero" value="Femenino">Femenino
+          <input type="radio" id="genero" name="Genero" value="Otro">Otro
         </fieldset>
 
         <label>Seleccione el/los juegos que prefiere :</label>
-        <fieldset class="selectores">
-          <input type="checkbox" name="Juegos_seleccionados" value="Estrategia">Estrategia
-          <input type="checkbox" name="Juegos_seleccionados" value="Infantiles">Infantiles
-          <input type="checkbox" name="Juegos_seleccionados" value="Naipes">Naipes
-        </fieldset>
+        <select size="4" name="Juegos_seleccionados_" id="juego" required multiple>
+          <option disabled>Use Ctrl + click para seleciionar mas de uno</option>
+          <option>Estrategia</option>
+          <option>Infantiles</option>
+          <option>Naipes</option>
+        </select> 
 
         <label for="consulta">Escribí tu comentario y/o consulta :</label>
         <textarea rows="10" cols="40" id="consulta" name="consulta"
-          maxlength="200" placeholder="Escribí acá tu consulta"></textarea>
+          maxlength="200" placeholder="Escribí acá tu consulta" required></textarea>
 
         <input id="boton_reset" type="reset" value="Borrar formulario" >
         <input id="boton_enviar" type="submit" value="Enviar" >
