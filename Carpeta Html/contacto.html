@@ -42,10 +42,10 @@
       <fieldset>
 
         <label for="nombre">Nombre/s :</label>
-        <input type="text" autofocus id="nombre" name="Nombre" pattern="[A-Za-z]+" required>
+        <input type="text" autofocus id="nombre" name="Nombre" pattern="[A-Za-z ]+" required>
 
         <label for="apellido">Apellido/s :</label>
-        <input type="text" id="apellido" name="Apellido" pattern="[A-Za-z]+" required>
+        <input type="text" id="apellido" name="Apellido" pattern="[A-Za-z ]+" required>
 
         <label for="telefono">Número de telefono :</label>
         <input type="tel" id="telefono" name="Numero_de_telefono" pattern="[0-9]+" required>
@@ -68,7 +68,7 @@
         <input type="email" id="email" name="E-mail" onchange="validarCorreo(formulario.email.value)" required>
 
         <label for="nacimiento">Fecha de nacimiento :</label>
-        <input type="date" id="nacimiento" name="Fecha_de_nacimiento_" min="1950-01-01" max="2023-05-31" required>
+        <input type="date" id="nacimiento" name="Fecha_de_nacimiento_" min="1900-01-01" max="2023-05-31" required>
 
         <label>Género :</label>
         <fieldset class="selectores" >

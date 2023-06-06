@@ -337,3 +337,6 @@ footer {
       background-color: chartreuse;
       width: 16em;
     }
+    input:invalid{
+      color: red;
+    }
